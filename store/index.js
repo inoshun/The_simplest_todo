@@ -17,5 +17,8 @@ export const mutations = {
       return !task.isDone;
     };
     state.todoTasks = state.todoTasks.filter(checkIncompleted);
+  },
+  todosInit(state, todoTasks) {
+    state.todoTasks = todoTasks;
   }
 };

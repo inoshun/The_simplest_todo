@@ -17,8 +17,16 @@ export default {
   name: "TodoList",
   computed: {
     todos() {
-      return this.$store.state.todoTasks;
+      let todos = this.$store.state.todoTasks;
+      if (process.client) {
+        localStorage.setItem("todos", JSON.stringify(todos));
+      }
+      return todos;
     }
+  },
+  beforeMount() {
+    let todoTasks = JSON.parse(localStorage.getItem("todos"));
+    this.$store.commit("todosInit", todoTasks);
   },
   methods: {
     taskDoneToggle(index) {
