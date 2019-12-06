@@ -6,7 +6,10 @@
           {{ todo.task }}
         </p>
       </label>
-      <button @click="deleteTask(index)"></button>
+      <div class="flex">
+        <button @click="editModalToggle(index)" class="edit_btn"></button>
+        <button class="delete_btn" @click="deleteTask(index)"></button>
+      </div>
     </li>
     <li v-show="!$store.state.todoTasks.length">Add your tasks here.</li>
   </ul>
@@ -46,6 +49,14 @@ export default {
       } else {
         return;
       }
+    },
+    editModalToggle(index) {
+      if (this.$store.state.todoTasks[index].isDone) {
+        alert("This task is already completed!");
+        return;
+      } else {
+        this.$emit("toggle", index);
+      }
     }
   }
 };
@@ -57,13 +68,10 @@ li {
   margin-bottom: 25px;
   position: relative;
 
-  input {
-    display: none;
-  }
-
   p {
+    position: relative;
     width: 100%;
-    padding: 13px 65px 13px 19px;
+    padding: 13px 85px 13px 19px;
     cursor: pointer;
     box-shadow: $shadowSmall;
     border-radius: 8px;
@@ -80,26 +88,44 @@ li {
     }
   }
 
-  button {
+  div {
     position: absolute;
     top: 0;
     bottom: 0;
     right: 20px;
-    width: 23px;
-    height: 23px;
+    justify-content: space-between;
+    align-items: center;
+    width: 57px;
     margin: auto;
-    border: 1px solid $blue;
-    border-radius: 50%;
-    background-color: transparent;
-    background-image: url(~assets/images/close_blue.png);
-    background-position: center;
-    background-size: 10px 10px;
-    background-repeat: no-repeat;
-    transition: 0.2s;
 
-    &:hover {
-      background-color: $blue;
-      background-image: url(~assets/images/close_white.png);
+    button {
+      width: 23px;
+      height: 23px;
+      border: 1px solid $blue;
+      border-radius: 50%;
+      background-color: transparent;
+      background-position: center;
+      background-size: 10px 10px;
+      background-repeat: no-repeat;
+      transition: 0.2s;
+
+      &:hover {
+        background-color: $blue;
+      }
+
+      &.delete_btn {
+        background-image: url(~assets/images/close_blue.png);
+        &:hover {
+          background-image: url(~assets/images/close_white.png);
+        }
+      }
+
+      &.edit_btn {
+        background-image: url(~assets/images/edit_blue.png);
+        &:hover {
+          background-image: url(~assets/images/edit_white.png);
+        }
+      }
     }
   }
 }
@@ -109,7 +135,11 @@ li {
     margin-bottom: 20px;
 
     p {
-      padding: 10px 50px 10px 15px;
+      padding: 10px 75px 10px 15px;
+    }
+
+    div {
+      right: 10px;
     }
   }
 }

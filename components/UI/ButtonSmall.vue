@@ -18,6 +18,7 @@ button {
   border-radius: 10px;
   color: white;
   transition: 0.2s;
+  font-size: 16px;
 
   &:hover {
     opacity: 1;
@@ -28,6 +29,7 @@ button {
   button {
     height: 45px;
     padding: 0 20px;
+    font-size: 14px;
   }
 }
 </style>

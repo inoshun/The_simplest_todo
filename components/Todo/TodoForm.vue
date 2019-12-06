@@ -2,12 +2,10 @@
   <form @submit.prevent>
     <div class="todoform_top">
       <div class="flex">
-        <input type="text" placeholder="Add a task" v-model="newItem" />
+        <InputText className="animation" placeholder="Add a task" v-model="newItem" />
         <ButtonSmall @click="addItem">Add</ButtonSmall>
       </div>
-      <p class="errorText" :class="{ show: hasError }">
-        This field can not be empty!
-      </p>
+      <ErrorText :hasError="hasError">This field can not be empty!</ErrorText>
     </div>
     <div class="todoform_bottom">
       <ButtonSmall
@@ -21,10 +19,15 @@
 
 <script>
 import ButtonSmall from "@/components/UI/ButtonSmall.vue";
+import InputText from "@/components/UI/InputText.vue";
+import ErrorText from "@/components/UI/ErrorText.vue";
+
 export default {
   name: "TodoForm",
   components: {
-    ButtonSmall
+    ButtonSmall,
+    InputText,
+    ErrorText
   },
   data() {
     return {
@@ -72,32 +75,13 @@ export default {
 <style lang="scss" scoped>
 form {
   margin-bottom: 70px;
-  font-size: 16px;
 
   .todoform_top {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 
     div {
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 10px;
-
-      input {
-        width: 450px;
-        height: 50px;
-
-        padding: 0 20px;
-        border: 1px solid $superLightGray;
-        border-radius: 35px;
-        background-color: $superLightGray;
-        outline: none;
-        transition: 0.3s ease-out;
-
-        &:focus {
-          width: 600px;
-          background-color: white;
-        }
-      }
     }
   }
 }
@@ -105,19 +89,9 @@ form {
 @media screen and (max-width: 768px) {
   form {
     margin-bottom: 50px;
-    font-size: 14px;
 
     .todoform_top {
-      div {
-        input {
-          width: 70%;
-          height: 45px;
-
-          &:focus {
-            width: 70%;
-          }
-        }
-      }
+      margin-bottom: 45px;
     }
   }
 }

@@ -20,5 +20,10 @@ export const mutations = {
   },
   todosInit(state, todoTasks) {
     state.todoTasks = todoTasks;
+  },
+  editTasks(state, editInfo) {
+    let index = editInfo.taskIndex;
+    let editedItem = editInfo.editedItem;
+    state.todoTasks[index].task = editedItem;
   }
 };

@@ -19,12 +19,12 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  height: 80px;
   background-color: white;
   box-shadow: $shadowLarge;
 
   h1 {
-    font-size: 34px;
+    font-size: 32px;
     font-weight: 700;
     color: $darkBlue;
   }

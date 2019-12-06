@@ -26,16 +26,6 @@ main {
   flex-wrap: wrap;
 }
 
-/* ------エラーテキスト-------*/
-.errorText {
-  display: none;
-  width: 100%;
-  color: red;
-}
-.errorText.show {
-  display: block;
-}
-
 @media screen and (max-width: 768px) {
   /* ------各ブロック-------*/
   section,
