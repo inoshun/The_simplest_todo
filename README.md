@@ -1,6 +1,11 @@
 # The_simplest_todo
 
-> https://simplest-todo.inoshunnomad.com/
+超シンプルなToDoリスト with Nuxt.js
+
+
+公開URL
+
+https://the-simplest-todo.herokuapp.com/
 
 ## Build Setup
 
