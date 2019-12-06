@@ -33,12 +33,6 @@ export default {
     }
   },
   beforeMount() {
-    // let jsonTodos;
-    // if (localStorage.getItem("todos")) {
-    //   jsonTodos = localStorage.getItem("todos");
-    // } else {
-    //   return;
-    // }
     this.initTodos = JSON.parse(localStorage.getItem("todos"));
   },
   mounted() {
