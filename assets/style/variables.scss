@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/* SCSS Document */
+
+/* ------Colors-------*/
+$gray: #7f7f7f;
+$blue: #0043ff;
+$darkBlue: #030026;
+$darkGray: #232323;
+$lightGray: #c4c4c4;
+$superLightGray: #dddddd;
+
+/* ------Fonts-------*/
+
+$dmSans: "DM Sans", sans-serif;
+$notoSans: "Noto Sans Japanese", "Avenir Next", "Yu Gothic Medium",
+"游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3",
+"メイリオ", sans-serif;
+
+/* ------Shadows-------*/
+$shadowSmall: 0 0 5px rgba(0, 0, 0, 0.3);
+$shadowLarge: 0 0 10px rgba(0, 0, 0, 0.3);
+$shadowSmallBlue: 0 0 5px rgba(0, 51, 255, 0.8);
