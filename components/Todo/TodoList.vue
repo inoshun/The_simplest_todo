@@ -18,6 +18,11 @@
 <script>
 export default {
   name: "TodoList",
+  data() {
+    return {
+      initTodos: []
+    }
+  },
   computed: {
     todos() {
       let todos = this.$store.state.todoTasks;
@@ -28,8 +33,16 @@ export default {
     }
   },
   beforeMount() {
-    let todoTasks = JSON.parse(localStorage.getItem("todos"));
-    this.$store.commit("todosInit", todoTasks);
+    // let jsonTodos;
+    // if (localStorage.getItem("todos")) {
+    //   jsonTodos = localStorage.getItem("todos");
+    // } else {
+    //   return;
+    // }
+    this.initTodos = JSON.parse(localStorage.getItem("todos"));
+  },
+  mounted() {
+    this.$store.commit("todosInit", this.initTodos);
   },
   methods: {
     taskDoneToggle(index) {

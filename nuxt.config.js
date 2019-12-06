@@ -49,7 +49,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~plugins/set-min-height.client.js", "~plugins/todos-init.client.js"],
+  plugins: ["~plugins/set-min-height.client.js"],
   /*
    ** Nuxt.js dev-modules
    */
