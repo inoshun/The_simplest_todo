@@ -1,6 +1,6 @@
 # The_simplest_todo
 
-> My best Nuxt.js project
+> https://simplest-todo.inoshunnomad.com/
 
 ## Build Setup
 
