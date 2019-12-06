@@ -1,6 +1,6 @@
 # The_simplest_todo
 
-超シンプルなToDoリスト with Nuxt.js
+超シンプルなTo-Doリスト with Nuxt.js
 
 
 公開URL
