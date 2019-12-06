@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       initTodos: []
-    }
+    };
   },
   computed: {
     todos() {
@@ -36,7 +36,9 @@ export default {
     this.initTodos = JSON.parse(localStorage.getItem("todos"));
   },
   mounted() {
-    this.$store.commit("todosInit", this.initTodos);
+    if (this.initTodos) {
+      this.$store.commit("todosInit", this.initTodos);
+    }
   },
   methods: {
     taskDoneToggle(index) {
